@@ -319,12 +319,11 @@ void lexer::read(token &out) {
                 extension.push_back(at());
                 m_location.advanceColumn();
             }
-            extension.push_back('\0');
-
             if (extension.empty()) {
                 m_error = "Expected extension name in #extension directive";
                 return;
             }
+            extension.push_back('\0');
 
             skipWhitespace(false);
 
@@ -342,12 +341,11 @@ void lexer::read(token &out) {
                 behavior.push_back(at());
                 m_location.advanceColumn();
             }
-            behavior.push_back('\0');
-
             if (behavior.empty()) {
                 m_error = "Expected behavior in #extension directive";
                 return;
             }
+            behavior.push_back('\0');
 
             if (!strcmp(&behavior[0], "enable")) {
                 out.asDirective.asExtension.behavior = kEnable;
