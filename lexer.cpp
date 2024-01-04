@@ -315,7 +315,7 @@ void lexer::read(token &out) {
             skipWhitespace(false);
 
             vector<char> extension;
-            while (isChar(at())) {
+            while (isChar(at()) || at() == '_') {
                 extension.push_back(at());
                 m_location.advanceColumn();
             }
