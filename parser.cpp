@@ -788,7 +788,7 @@ CHECK_RETURN bool parser::parseTopLevelItem(topLevel &level, topLevel *continuat
         for (size_t i = 0; i < next.layoutQualifiers.size(); i++) {
             // "When the same layout-qualifier-name occurs multiple times, in a single declaration, the
             //  last occurrence overrides the former occurrence(s)"
-            for (size_t j = 0; i < level.layoutQualifiers.size(); j++) {
+            for (size_t j = 0; j < level.layoutQualifiers.size(); j++) {
                 if (next.layoutQualifiers[i]->name == level.layoutQualifiers[j]->name)
                     level.layoutQualifiers.erase(level.layoutQualifiers.begin() + j);
             }
